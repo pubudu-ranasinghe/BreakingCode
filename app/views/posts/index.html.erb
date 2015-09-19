@@ -3,22 +3,103 @@
 
   <div class="row text-center hero-banner">
     <div class="col-md-12">
-      <h1>The platform to change</h1>
+      <h1>Digitizing democracy, one cause at a time</h1>
     </div>
     <div class="col-md-12">
-      <button type="button" class="btn btn-primary btn-lg btn-custom">Post a Story</button>
+      <%= link_to 'Start a Cause', new_post_path, class: 'btn btn-primary btn-lg btn-line btn-red' %>
     </div>
   </div>
   <div class="row hero-story">
     <div class="col-md-6">
       <img src="http://placehold.it/600x350" class="img-responsive" />
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 body">
       <h2>Google event announced for Tuesday, September 29th</h2>
       <p>
         Google announced its fall event late Friday, sending out press invitations for an event in San Francisco on Tuesday, September 29th at 9am PT. Of course, as we recently learned with Google, almost...
+        <a href="#">Read More</a>
       </p>
+      <div class="meta">
+        posted by <a href="#">John Doe</a>
+      </div>
+      <div class="vote-btns">
+        <a class="btn btn-danger btn-custom btn-red" href="#"><i class="fa fa-thumbs-up fa-fw fa-lg"></i>Support This</a>
+        <a class="btn btn-danger btn-custom btn-red" href="#"><i class="fa fa-thumbs-down fa-fw fa-lg"></i></a>
+      </div>
     </div>
+  </div>
+
+  <div class="row cards">
+    <div class="col-md-8 card">
+
+      <h3>20 fresh and colorful CSS3 buttons</h3>
+      <p>
+        Google announced its fall event late Friday, sending out press invitations for an event in San Francisco on Tuesday, September 29th at 9am PT.
+      </p>
+      <div class="card-vote-btns">
+        <a class="btn btn-danger btn-custom btn-grey" href="#"><i class="fa fa-thumbs-up fa-fw fa-sm"></i></a>
+        <a class="btn btn-danger btn-custom btn-grey" href="#"><i class="fa fa-thumbs-down fa-fw fa-sm"></i></a>
+      </div>
+    </div>
+    <div class="col-md-8 card">
+      <h3>20 fresh and colorful CSS3 buttons</h3>
+      <p>
+        Google announced its fall event late Friday, sending out press invitations for an event in San Francisco on Tuesday, September 29th at 9am PT.
+      </p>
+      <div class="card-vote-btns">
+        <a class="btn btn-danger btn-custom btn-grey" href="#"><i class="fa fa-thumbs-up fa-fw fa-sm"></i></a>
+        <a class="btn btn-danger btn-custom btn-grey" href="#"><i class="fa fa-thumbs-down fa-fw fa-sm"></i></a>
+      </div>
+    </div>
+    <div class="col-md-8 card">
+      <h3>20 fresh and colorful CSS3 buttons</h3>
+      <p>
+        Google announced its fall event late Friday, sending out press invitations for an event in San Francisco on Tuesday, September 29th at 9am PT.
+      </p>
+      <div class="card-vote-btns">
+        <a class="btn btn-danger btn-custom btn-grey" href="#"><i class="fa fa-thumbs-up fa-fw fa-sm"></i></a>
+        <a class="btn btn-danger btn-custom btn-grey" href="#"><i class="fa fa-thumbs-down fa-fw fa-sm"></i></a>
+      </div>
+    </div>
+    <div class="col-md-8 card">
+      <h3>20 fresh and colorful CSS3 buttons</h3>
+      <p>
+        Google announced its fall event late Friday, sending out press invitations for an event in San Francisco on Tuesday, September 29th at 9am PT.
+      </p>
+      <div class="card-vote-btns">
+        <a class="btn btn-danger btn-custom btn-grey" href="#"><i class="fa fa-thumbs-up fa-fw fa-sm"></i></a>
+        <a class="btn btn-danger btn-custom btn-grey" href="#"><i class="fa fa-thumbs-down fa-fw fa-sm"></i></a>
+      </div>
+    </div>
+    <% @posts.each do |post| %>
+    <div class="col-md-8 card">
+      <%= link_to post do %>
+        <h3><%= post.title %></h3>
+      <% end %>
+      <p>
+        <%= post.content %>
+      </p>
+      <p>
+        <%= pluralize(post.get_upvotes.size, 'person') %> support this
+      </p>
+      <div class="card-vote-btns">
+        <%= link_to upvote_post_path(post), method: :patch, class: 'btn btn-danger btn-custom btn-grey' do %>
+          <i class="fa fa-thumbs-up fa-fw fa-sm"></i>
+        <% end %>
+        <%= link_to downvote_post_path(post), method: :patch, class: 'btn btn-danger btn-custom btn-grey' do %>
+          <i class="fa fa-thumbs-down fa-fw fa-sm"></i>
+        <% end %>
+      </div>
+    </div>
+      <tr>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Upvote', upvote_post_path(post), method: :patch %></td>
+        <td><%= link_to 'Downvote', downvote_post_path(post), method: :patch %></td>
+        <td>Upvotes: <%= post.get_upvotes.size %></td>
+      </tr>
+    <% end %>
   </div>
 
 
@@ -53,7 +134,7 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+
 
 <% if user_signed_in? %>
   <li>

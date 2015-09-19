@@ -1,5 +1,12 @@
 $fonts: 'Work Sans', sans-serif;
 $font-black: #222;
+$font-grey: #6C6F73;
+$red: #D32F2F;
+$red-dark: #C12E1E;
+$red-light: #E04E3E;
+$grey: #bbb;
+$grey-light: #FAFAFA;
+$grey-dark: #888;
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $fonts;
@@ -10,6 +17,19 @@ h1, h2, h3, h4, h5, h6 {
 
 p, div {
   font-family: $fonts;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.6;
+  color: $font-grey;
+}
+
+a {
+  color: $red;
+}
+
+a:hover {
+  color: $red-dark;
 }
 
 
@@ -25,27 +45,89 @@ p, div {
     li {
       a {
         padding-top: 30px;
-        padding-bottom: 30px;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        border-bottom: 3px solid #fff;
+        transition: border-color .3s ease;
+      }
+      a:hover {
+        border-color: $red;
       }
     }
   }
 }
 
 .hero-banner {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   h1 {
     font-weight: 300;
+    font-size: 42px;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
   }
 }
 
 .hero-story {
-  h2 {
-    letter-spacing: -0.3px;
-    font-weight: 500;
+  background-color: $grey-light;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 50px;
+
+  .col-md-6 {
+    padding: 0;
+    h2 {
+      letter-spacing: -0.3px;
+      font-weight: 500;
+    }
   }
+  .body {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .meta {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.cards {
+  margin-bottom: 50px;
+  .card {
+    background-color: $grey-light;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+}
+
+.btn-line {
+  border: 2px solid $red;
+  background-color: #fff;
+  color: $red;
+  border-radius: 5px;
 }
 
 .btn-custom {
   border: none;
-  border-radius: 3px;
+}
+
+.btn-red {
+  // background-color: $red;
+  // box-shadow: inset 0px -3px 0px 0px $red-dark;
+  transition: background-color .3s ease;
+}
+
+.btn-red:hover, .btn-red:focus {
+  background-color: $red-light;
+  border-color: $red-light;
+}
+
+.btn-grey {
+  background-color: $grey;
+  box-shadow: inset 0px -3px 0px 0px $grey-dark;
+  transition: background-color .4s ease;
+}
+
+.btn-grey:hover, .btn-grey:focus {
+  background-color: $grey-dark;
 }
