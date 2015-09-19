@@ -65,7 +65,6 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
-    evil_icons (1.7.7)
     execjs (2.6.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
@@ -188,7 +187,6 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
-  evil_icons
   jbuilder (~> 2.0)
   jquery-rails
   omniauth-facebook

@@ -139,3 +139,27 @@ a:hover {
 .ctal{
   text-align: center;
 }
+
+.medium-text {
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.small-thumb {
+  width: 32px;
+}
+
+.post {
+  .cover { margin-bottom: 20px; }
+  .desc { margin-bottom: 20px }
+  .title { margin-bottom: 20px }
+  .mps { margin-bottom: 20px }
+  .vote { margin-bottom: 20px }
+}
+
+.footer {
+  background-color: $grey-light;
+  padding: 20px 0;
+}
