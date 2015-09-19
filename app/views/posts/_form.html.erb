@@ -1,6 +1,7 @@
-<%= simple_form_for(@post) do |f| %>
+<%= simple_form_for(@post, html: { class: 'form-horizontal', multipart: true}, wrapper: :horizontal_form ) do |f| %>
   <%= f.error_notification %>
 
+  <h2>What change do you want to make?</h2>
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :content %>
