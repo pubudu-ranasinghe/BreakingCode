@@ -1,3 +1,18 @@
+$fonts: 'Work Sans', sans-serif;
+$font-black: #222;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $fonts;
+  font-weight: 700;
+  color: $font-black;
+  text-rendering: optimizelegibility;
+}
+
+p, div {
+  font-family: $fonts;
+}
+
+
 .navbar-custom {
   background-color: #fff;
   border-bottom: none;
@@ -14,4 +29,23 @@
       }
     }
   }
+}
+
+.hero-banner {
+  margin-bottom: 20px;
+  h1 {
+    font-weight: 300;
+  }
+}
+
+.hero-story {
+  h2 {
+    letter-spacing: -0.3px;
+    font-weight: 500;
+  }
+}
+
+.btn-custom {
+  border: none;
+  border-radius: 3px;
 }
