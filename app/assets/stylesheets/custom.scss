@@ -1,0 +1,17 @@
+.navbar-custom {
+  background-color: #fff;
+  border-bottom: none;
+
+  .navbar-brand {
+    padding-top: 25px;
+    // padding-bottom: 20px;
+  }
+  .navbar-nav {
+    li {
+      a {
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+    }
+  }
+}
