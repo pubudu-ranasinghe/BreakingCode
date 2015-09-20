@@ -42,14 +42,20 @@
         <p>
         </p>
       </div>
-      <div class="vote">
-        <%= link_to upvote_post_path(@post), method: :patch, class: 'btn btn-primary btn-lg btn-line btn-red' do %>
-          <i class="fa fa-thumbs-up fa-fw fa-lg"></i>Support this Cause
-        <% end %>
-        <%= link_to upvote_post_path(@post), method: :patch, class: 'btn btn-primary btn-lg btn-line btn-red' do %>
-          <i class="fa fa-thumbs-down fa-fw fa-lg"></i>
-        <% end %>
-      </div>
+
+      <% if @post.liked_by current_user %>
+      <h4>Thank you for your response</h4>
+      <% else %>
+        <div class="vote">
+          <%= link_to upvote_post_path(@post), method: :patch, class: 'btn btn-primary btn-lg btn-line btn-red' do %>
+            <i class="fa fa-thumbs-up fa-fw fa-lg"></i>Support this Cause
+          <% end %>
+          <%= link_to upvote_post_path(@post), method: :patch, class: 'btn btn-primary btn-lg btn-line btn-red' do %>
+            <i class="fa fa-thumbs-down fa-fw fa-lg"></i>
+          <% end %>
+        </div>
+      <% end %>
+
       <div class="share">
         <div class="fb-share-button" data-href="<%= request.original_url %>" data-layout="button"></div>
       </div>
