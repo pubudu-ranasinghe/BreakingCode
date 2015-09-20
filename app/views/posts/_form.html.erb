@@ -1,17 +1,43 @@
 <%= simple_form_for(@post, html: { class: 'form-horizontal', multipart: true}, wrapper: :horizontal_form ) do |f| %>
   <%= f.error_notification %>
 
-  <h2 class="medium-text">What change do you want to make?</h2>
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :content %>
-    <%= f.input :cover, as: :file %>
-    <%= f.association :ministers, label_method: :name, collection: Minister.all %>
+  <h3 class="">What is your cause?</h3>
+  
+    <p>Describe the specific cause you want to voice out. This will become the headline that can attract attention in an instant.</p>
+    <form class="form-horizontal">
+      <div class="form-group">
+     <div class="smallpadding formcustom ">
+    <%= f.input :title, label: false, required: true, autofocus: true, input_html: {class: 'form-control smallpadding'}, placeholder: 'Write a heading'%>
+   </div>
+   </div>
+   <hr>
+   <h3 class="">Who can make this change?</h3>
+  
+    <p>You can select the Minister or Member of Parliament who has the power to support your cause. You can select upto 2, be specific!</p>
+   <%= f.association :ministers,label: false, placeholder: 'Start typing...', label_method: :name, collection: Minister.all %>
+   
+   <hr>
+   <h3 class="">Voice out your cause. </h3>
+    <p>Explain your cause in detail. How do you propose change? what impact will it have on Sri Lanka?</p>
+     <div class = "formcustom2">
+   <%= f.input :content, label: false, placeholder: 'Voice out..', input_html: {class: 'form-control smallpadding', rows: 10} %>
   </div>
+   <hr>
+   <h3 class="">Add a Photo </h3>
+    <p>Content with photos usually recieve more supporters</p>
+     <div class="smallpadding ">
+    <%= f.input :cover, as: :file, label: false %>
+    </div>
+  
+ 
+  <hr>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class="smallpadding ">
+    <%= f.button :submit,"Submit Cause", class: 'btn btn-primary btn-lg btn-custom btn-red btn-block' %>
   </div>
+</div>
+ </form>
 <% end %>
 
 <script>
