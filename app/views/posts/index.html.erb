@@ -61,7 +61,7 @@
             <% end %>
           </div>
           <p>
-            <%= "#{pluralize(post.get_upvotes.size, 'person')}" %> support this
+            <%= "#{pluralize(post.get_upvotes.size, 'voice')}" %>
           </p>
           <div class="card-vote-btns">
             <%= link_to upvote_post_path(post), method: :patch, class: 'btn btn-danger btn-custom btn-grey' do %>

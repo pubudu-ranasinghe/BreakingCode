@@ -1,3 +1,17 @@
+<%
+meta title: @post.title,
+     description: truncate(@post.content, length: 200)
+%>
+
+<%
+meta og: {
+  title: "#{@post.title} — Voices.lk",
+  image: URI.join(request.url, @post.cover.url),
+  url: request.original_url,
+  description: truncate(@post.content, length: 150)
+}
+%>
+
 <div class="container">
   <div class="row post">
     <p id="notice"><%= notice %></p>
@@ -5,8 +19,6 @@
     <div class="col-md-7">
       <div class="cover">
         <%= image_tag @post.cover.url, class: 'img-responsive' %>
-        <!-- <%= image_tag('afp.jpg', class: 'img-responsive') %> -->
-        <!-- <img src="http://placehold.it/650x350" alt="" class="img-responsive" /> -->
       </div>
       <div class="desc">
         <%= @post.content %>
@@ -33,11 +45,11 @@
       </div>
       <div class="mps">
         <p>
-          <%= image_tag('profile-img.jpg', class: 'img-circle small-thumb') %>
+          <%= image_tag('ravi4.jpg', class: 'img-circle small-thumb') %>
           Ravi Karunanayake
         </p>
         <p>
-          <%= image_tag('profile-img.jpg', class: 'img-circle small-thumb') %>
+          <%= image_tag('anura.jpg', class: 'img-circle small-thumb') %>
           Anura Kumara Disanayaka
         </p>
         <p>
