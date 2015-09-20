@@ -20,10 +20,12 @@
       <%= image_tag @special.cover.url, class: 'img-responsive' %>
     </div>
     <div class="col-md-6 body">
-      <h2><%= @special.title %></h2>
+      <%= link_to @special do %>
+        <h2><%= @special.title %></h2>
+      <% end %>
       <p>
         <%= truncate(@special.content, length: 200) %>
-        <a href="#">Read More</a>
+        <%= link_to 'Read More', @special %>
       </p>
       <div class="meta">
         posted by <a href="#">John Doe</a>
@@ -33,7 +35,7 @@
           <i class="fa fa-thumbs-up fa-fw fa-sm"></i>Support This
         <% end %>
         <%= link_to downvote_post_path(@special), method: :patch, class: 'btn btn-danger btn-custom btn-red' do %>
-          <i class="fa fa-thumbs-up fa-fw fa-sm"></i>
+          <i class="fa fa-thumbs-down fa-fw fa-sm"></i>
         <% end %>
       </div>
     </div>
@@ -52,10 +54,10 @@
           <% end %>
           <div class="mps">
             <%= link_to root_path, { data: { toggle: 'tooltip', placement: 'top', title: 'Ravi Karunanayaka' }} do %>
-              <%= image_tag('profile-img.jpg', class: 'img-circle small-thumb') %>
+              <%= image_tag('ravi4.jpg', class: 'img-circle small-thumb') %>
             <% end %>
             <%= link_to root_path, { data: { toggle: 'tooltip', placement: 'top', title: 'Anura Kumara Disanayaka' }} do %>
-              <%= image_tag('profile-img.jpg', class: 'img-circle small-thumb') %>
+              <%= image_tag('anura.jpg', class: 'img-circle small-thumb') %>
             <% end %>
           </div>
           <p>

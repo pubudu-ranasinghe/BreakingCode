@@ -50,7 +50,9 @@
         <%= link_to upvote_post_path(@post), method: :patch, class: 'btn btn-primary btn-lg btn-line btn-red' do %>
           <i class="fa fa-thumbs-down fa-fw fa-lg"></i>
         <% end %>
-        <!-- <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div> -->
+      </div>
+      <div class="share">
+        <div class="fb-share-button" data-href="<%= request.original_url %>" data-layout="button"></div>
       </div>
     </div>
 
