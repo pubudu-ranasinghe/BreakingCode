@@ -3,4 +3,7 @@ class Minister < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :taggings
+  has_many :posts, through: :taggings
 end

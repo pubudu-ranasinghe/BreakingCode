@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'ministers/new'
-
-  get 'ministers/show'
-
   resources :posts do
     member do
       patch 'upvote'
