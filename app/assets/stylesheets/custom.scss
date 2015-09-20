@@ -40,11 +40,12 @@ a:hover {
   .navbar-brand {
     padding-top: 25px;
     // padding-bottom: 20px;
+    img { height: 50px; }
   }
   .navbar-nav {
     li {
       a {
-        padding-top: 30px;
+        padding-top: 45px;
         padding-bottom: 10px;
         margin-bottom: 20px;
         border-bottom: 3px solid #fff;
@@ -58,21 +59,22 @@ a:hover {
 }
 
 .hero-banner {
-  margin-bottom: 50px;
+  margin-bottom: 80px;
   text-align: center;
-   
+
   h1 {
     font-weight: 300;
     font-size: 42px;
     line-height: 1.6;
     letter-spacing: -0.02em;
+    margin-bottom: 20px;
   }
- 
+
 }
 .heroimg{
   text-align: center;
    opacity: 1;
-  
+
 }
 
 .hero-story {
@@ -178,5 +180,3 @@ a:hover {
 .manthriinfo{
   margin-bottom: 40px;
 }
-
-

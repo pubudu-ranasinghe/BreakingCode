@@ -5,6 +5,7 @@
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :content %>
+    <%= f.input :cover, as: :file %>
     <%= f.association :ministers, label_method: :name, collection: Minister.all %>
   </div>
 

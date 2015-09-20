@@ -4,13 +4,13 @@
 
     <div class="col-md-7">
       <div class="cover">
-        <%= image_tag('afp.jpg', class: 'img-responsive') %>
+        <%= image_tag @post.cover.url, class: 'img-responsive' %>
+        <!-- <%= image_tag('afp.jpg', class: 'img-responsive') %> -->
         <!-- <img src="http://placehold.it/650x350" alt="" class="img-responsive" /> -->
       </div>
       <div class="desc">
         <%= @post.content %>
       </div>
-<<<<<<< HEAD
       <!--DISQUs -->
       <div id="disqus_thread"></div>
       <script type="text/javascript">
@@ -25,8 +25,6 @@
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-=======
->>>>>>> tagging
     </div>
 
     <div class="col-md-5">
