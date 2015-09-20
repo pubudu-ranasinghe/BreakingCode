@@ -1,14 +1,20 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
+  
 
-  <div class="row text-center hero-banner">
+    <div class="row text-center hero-banner">
     <div class="col-md-12">
+      <div>
+         <%= image_tag('par.jpg', class: 'heroimg') %>
+      </div>
       <h1>Digitizing democracy, one cause at a time</h1>
     </div>
     <div class="col-md-12">
       <%= link_to 'Start a Cause', new_post_path, class: 'btn btn-primary btn-lg btn-line btn-red' %>
     </div>
   </div>
+  
+  
   <div class="row hero-story">
     <div class="col-md-6">
       <img src="http://placehold.it/600x350" class="img-responsive" />
