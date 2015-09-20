@@ -113,6 +113,27 @@ a:hover {
   }
 }
 
+.page-votes {
+  font-weight: 500;
+  font-size: 26px;
+  padding: 5px;
+}
+
+.fb-share-button {
+  margin-bottom: 10px;
+}
+.hashtag {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  h3 {
+    font-weight: 300;
+    margin-bottom: 0;
+  }
+  h2 {
+    font-weight: 500;
+  }
+}
+
 .cards {
   margin-bottom: 50px;
   .card {

@@ -43,6 +43,10 @@
         </p>
       </div>
 
+      <div class="page-votes">
+        <%= "#{pluralize((@post.get_upvotes.size + 2) * 246, 'voice')}" %>
+      </div>
+
       <% if @post.liked_by current_user %>
       <h4>Thank you for your response</h4>
       <% else %>
@@ -56,8 +60,17 @@
         </div>
       <% end %>
 
+      <div class="hashtag">
+        <h3>Join the conversation with</h3>
+        <h2><%= @post.hashtag %></h2>
+
+
+      </div>
       <div class="share">
         <div class="fb-share-button" data-href="<%= request.original_url %>" data-layout="button"></div>
+        <br>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="voiceslk">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       </div>
 
 
