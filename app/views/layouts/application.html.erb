@@ -48,7 +48,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to 'Start a Cause', new_post_path, class: 'red-link' %></li>
           <li><a href="#">Explore</a></li>
-          <li><a href="#">How it Works</a></li>
+          <li><%= link_to 'How it Works', ministers_show_path %></li>
           <% if user_signed_in? %>
             <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
           <% else %>
