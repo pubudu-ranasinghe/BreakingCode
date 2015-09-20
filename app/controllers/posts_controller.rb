@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all.order(created_at: :desc)
-    @special = Post.find(7)
+    @special = Post.last
   end
 
   # GET /posts/1
