@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150919054929) do
+ActiveRecord::Schema.define(version: 20150919233138) do
 
   create_table "ministers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -26,6 +26,9 @@ ActiveRecord::Schema.define(version: 20150919054929) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
+    t.string   "ministry"
+    t.text     "bio"
   end
 
   add_index "ministers", ["email"], name: "index_ministers_on_email", unique: true
@@ -40,6 +43,16 @@ ActiveRecord::Schema.define(version: 20150919054929) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "post_id"
+    t.integer  "minister_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "taggings", ["minister_id"], name: "index_taggings_on_minister_id"
+  add_index "taggings", ["post_id"], name: "index_taggings_on_post_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

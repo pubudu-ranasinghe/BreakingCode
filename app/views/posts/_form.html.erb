@@ -1,13 +1,33 @@
 <%= simple_form_for(@post, html: { class: 'form-horizontal', multipart: true}, wrapper: :horizontal_form ) do |f| %>
   <%= f.error_notification %>
 
-  <h2>What change do you want to make?</h2>
+  <h2 class="medium-text">What change do you want to make?</h2>
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :content %>
+    <%= f.association :ministers, label_method: :name, collection: Minister.all %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+
+<script>
+// $(function() {
+//     $('#post_minister_ids').selectize(options);
+// });
+
+$(document).ready(function(){
+   $('#post_minister_ids').selectize({
+      delimiter: ',',
+      persist: false,
+      create: function(input) {
+          return {
+              value: input,
+              text: input
+          }
+      }
+   });
+});
+</script>
