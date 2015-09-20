@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150920013721) do
+ActiveRecord::Schema.define(version: 20150920054053) do
 
   create_table "ministers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150920013721) do
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.string   "hashtag"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"

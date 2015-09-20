@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <h3 class="">What is your cause?</h3>
-  
+
     <p>Describe the specific cause you want to voice out. This will become the headline that can attract attention in an instant.</p>
     <form class="form-horizontal">
       <div class="form-group">
@@ -12,10 +12,10 @@
    </div>
    <hr>
    <h3 class="">Who can make this change?</h3>
-  
+
     <p>You can select the Minister or Member of Parliament who has the power to support your cause. You can select upto 2, be specific!</p>
-   <%= f.association :ministers,label: false, placeholder: 'Start typing...', label_method: :name, collection: Minister.all %>
-   
+   <%= f.association :ministers,label: false, placeholder: 'Start typing...', class: 'form-control smallpadding', label_method: :name, collection: Minister.all %>
+
    <hr>
    <h3 class="">Voice out your cause. </h3>
     <p>Explain your cause in detail. How do you propose change? what impact will it have on Sri Lanka?</p>
@@ -28,8 +28,16 @@
      <div class="smallpadding ">
     <%= f.input :cover, as: :file, label: false %>
     </div>
-  
- 
+
+    <hr>
+    <h3 class="">Create a conversation </h3>
+     <p>Specify a #hashtag so we can monitor and promote your cause through social media. This will help others to voice their
+     opinion and give more exposure.</p>
+      <div class="smallpadding ">
+     <%= f.input :hashtag, label: false, placeholder: '#voiceslk', input_html: {class: 'form-control smallpadding'} %>
+     </div>
+
+
   <hr>
 
   <div class="form-group">
@@ -48,6 +56,7 @@
 $(document).ready(function(){
    $('#post_minister_ids').selectize({
       delimiter: ',',
+      maxItems: 2,
       persist: false,
       create: function(input) {
           return {

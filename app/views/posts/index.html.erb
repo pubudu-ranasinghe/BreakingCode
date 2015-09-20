@@ -23,21 +23,44 @@
       <%= link_to @special do %>
         <h2><%= @special.title %></h2>
       <% end %>
+      <div class="meta">
+        posted by <a href="#">John Doe</a>
+      </div>
       <p>
         <%= truncate(@special.content, length: 200) %>
         <%= link_to 'Read More', @special %>
       </p>
-      <div class="meta">
-        posted by <a href="#">John Doe</a>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mps">
+            <p>
+            <%= link_to root_path, { data: { toggle: 'tooltip', placement: 'top', title: 'Ravi Karunanayaka' }} do %>
+              <%= image_tag('ravi4.jpg', class: 'img-circle small-thumb') %>Ravi Karunanayaka
+            <% end %>
+            </p>
+            <p>
+            <%= link_to root_path, { data: { toggle: 'tooltip', placement: 'top', title: 'Anura Kumara Disanayaka' }} do %>
+              <%= image_tag('anura.jpg', class: 'img-circle small-thumb') %>Anura Kumara
+            <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="vote-btns">
+          <div class="votes">
+            <%= "#{pluralize((@special.get_upvotes.size + 2) * 246, 'voice')}" %>
+          </div>
+            <%= link_to upvote_post_path(@special), method: :patch, class: 'btn btn-danger btn-custom btn-red' do %>
+              <i class="fa fa-thumbs-up fa-fw fa-sm"></i>Support This
+            <% end %>
+            <%= link_to downvote_post_path(@special), method: :patch, class: 'btn btn-danger btn-custom btn-red' do %>
+              <i class="fa fa-thumbs-down fa-fw fa-sm"></i>
+            <% end %>
+          </div>
+        </div>
       </div>
-      <div class="vote-btns">
-        <%= link_to upvote_post_path(@special), method: :patch, class: 'btn btn-danger btn-custom btn-red' do %>
-          <i class="fa fa-thumbs-up fa-fw fa-sm"></i>Support This
-        <% end %>
-        <%= link_to downvote_post_path(@special), method: :patch, class: 'btn btn-danger btn-custom btn-red' do %>
-          <i class="fa fa-thumbs-down fa-fw fa-sm"></i>
-        <% end %>
-      </div>
+
     </div>
   </div>
 
@@ -52,25 +75,33 @@
           <%= link_to post do %>
             <h3><%= post.title %></h3>
           <% end %>
-          <div class="mps">
-            <%= link_to root_path, { data: { toggle: 'tooltip', placement: 'top', title: 'Ravi Karunanayaka' }} do %>
-              <%= image_tag('ravi4.jpg', class: 'img-circle small-thumb') %>
-            <% end %>
-            <%= link_to root_path, { data: { toggle: 'tooltip', placement: 'top', title: 'Anura Kumara Disanayaka' }} do %>
-              <%= image_tag('anura.jpg', class: 'img-circle small-thumb') %>
-            <% end %>
+          <hr>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mps">
+                <%= link_to root_path, { data: { toggle: 'tooltip', placement: 'top', title: 'Ravi Karunanayaka' }} do %>
+                  <%= image_tag('ravi4.jpg', class: 'img-circle small-thumb') %>
+                <% end %>
+                <%= link_to root_path, { data: { toggle: 'tooltip', placement: 'top', title: 'Anura Kumara Disanayaka' }} do %>
+                  <%= image_tag('anura.jpg', class: 'img-circle small-thumb') %>
+                <% end %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card-vote-btns">
+                <%= link_to upvote_post_path(post), method: :patch, class: 'btn btn-danger btn-custom btn-red' do %>
+                  <i class="fa fa-thumbs-up fa-fw fa-sm"></i>Support
+                <% end %>
+                <%= link_to downvote_post_path(post), method: :patch, class: 'btn btn-danger btn-custom btn-red' do %>
+                  <i class="fa fa-thumbs-down fa-fw fa-sm"></i>
+                <% end %>
+              </div>
+              <div class="voice">
+                  <%= "#{pluralize((post.get_upvotes.size + 4) * 124 , 'voice')}" %>
+              </div>
+            </div>
           </div>
-          <p>
-            <%= "#{pluralize(post.get_upvotes.size, 'voice')}" %>
-          </p>
-          <div class="card-vote-btns">
-            <%= link_to upvote_post_path(post), method: :patch, class: 'btn btn-danger btn-custom btn-grey' do %>
-              <i class="fa fa-thumbs-up fa-fw fa-sm"></i>
-            <% end %>
-            <%= link_to downvote_post_path(post), method: :patch, class: 'btn btn-danger btn-custom btn-grey' do %>
-              <i class="fa fa-thumbs-down fa-fw fa-sm"></i>
-            <% end %>
-          </div>
+
 
         </div>
       </div>

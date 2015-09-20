@@ -83,7 +83,7 @@ a:hover {
   overflow: hidden;
   margin-bottom: 50px;
 
-  .col-md-6 {
+  > .col-md-6 {
     padding: 0;
     h2 {
       letter-spacing: -0.3px;
@@ -95,8 +95,20 @@ a:hover {
     padding-right: 15px;
 
     .meta {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    .mps {
       padding-top: 10px;
       padding-bottom: 10px;
+    }
+    .votes {
+      font-weight: 500;
+      font-size: 26px;
+      span {
+        font-weight: 300;
+        font-size: 18px
+      }
     }
   }
 }
@@ -107,6 +119,11 @@ a:hover {
     background-color: $grey-light;
     margin-bottom: 20px;
     padding-bottom: 15px;
+
+    .voice {
+      padding-top: 10px;
+      font-size: 24px;
+    }
   }
 }
 
@@ -159,6 +176,7 @@ a:hover {
 
 .small-thumb {
   width: 32px;
+  margin-right: 10px;
 }
 
 .post {
@@ -188,3 +206,4 @@ a:hover {
 .formcustom2{
   padding-left: 15px;
 }
+.red-link { color: $red !important; }

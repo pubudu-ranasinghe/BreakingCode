@@ -47,7 +47,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Start</a></li>
+          <li><%= link_to 'Start a Cause', new_post_path, class: 'red-link' %></li>
           <li><a href="#">Explore</a></li>
           <li><a href="#">How it Works</a></li>
           <% if user_signed_in? %>
