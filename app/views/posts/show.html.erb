@@ -1,16 +1,3 @@
-<%
-meta title: @post.title,
-     description: truncate(@post.content, length: 200)
-%>
-
-<%
-meta og: {
-  title: "#{@post.title} — Voices.lk",
-  image: URI.join(request.url, @post.cover.url),
-  url: request.original_url,
-  description: truncate(@post.content, length: 150)
-}
-%>
 
 <div class="container">
   <div class="row post">
